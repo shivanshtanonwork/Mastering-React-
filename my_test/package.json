@@ -1,5 +1,5 @@
 {
-  "name": "my_test",
+  "name": "@shivansh_tandon/my_code_compile",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shivansh Tandon",
-  "license": "ISC",
-  "dependencies": {
-    "cowsay": "^1.6.0"
-  }
+  "license": "ST"
 }
