@@ -57,3 +57,25 @@ fetch("https://jsonplaceholder.typicode.com/todos/1")
   .catch((err) => {
     console.log(err);
   });
+
+// Promise.all() - is a method that takes an array of promises and returns a new Promise that resolves when all of them are resolved, or rejects if any one fails.
+const fetchUser1 = fetch("https://jsonplaceholder.typicode.com/todos/1").then(
+  (res) => res.json()
+);
+const fetchUser2 = fetch("https://jsonplaceholder.typicode.com/todos/2").then(
+  (res) => res.json()
+);
+const fetchUser3 = fetch("https://jsonplaceholder.typicode.com/todos/3").then(
+  (res) => res.json()
+);
+
+Promise.all([fetchUser1, fetchUser2, fetchUser3])
+  .then((users) => {
+    console.log("All users loaded");
+    users.forEach((element) => {
+      console.log(element.title);
+    });
+  })
+  .catch((err) => {
+    console.log(err, "Error fetching user info");
+  });
