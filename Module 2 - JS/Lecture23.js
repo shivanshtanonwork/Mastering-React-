@@ -14,15 +14,15 @@
 // console.timeEnd("No memo again")
 
 function memoizedAdd() {
-  const cache = {};
+  const cache = new Map();
   return function (a, b) {
     const key = `${a}_${b}`;
-    if (cache[key]) {
-      return cache[key];
+    if (cache.has(key)) {
+      return cache.get(key);
     }
     for (let i = 0; i < 1e8; i++) {}
     const result = a + b;
-    cache[key] = result;
+    cache.set(key, result);
     return result;
   };
 }

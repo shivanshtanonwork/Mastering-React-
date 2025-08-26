@@ -2,7 +2,8 @@
 document.getElementById("grandParent").addEventListener("click", () => {
   console.log("grandParent Clicked!!");
 });
-document.getElementById("parent").addEventListener("click", () => {
+document.getElementById("parent").addEventListener("click", (e) => {
+  e.stopPropagation();
   console.log("parent clicked!!");
 });
 document.getElementById("child").addEventListener("click", () => {
