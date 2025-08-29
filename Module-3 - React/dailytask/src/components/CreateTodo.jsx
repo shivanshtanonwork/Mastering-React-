@@ -1,20 +1,21 @@
-import React from "react";
+import { useState } from "react";
 
 const CreateTodo = () => {
-  const task = 8;
-  const isDisabled = true;
-  //   const styles = {
-  //     color: "red",
-  //   };
-  const counTask = () => {
-    return task === 0 ? "No Task Available" : `Total Task ${task}`;
+  const [count, setCount] = useState(0);
+  const isDisabled = false;
+
+  const handleClick = () => {
+    setCount(count + 1);
   };
   return (
     <>
-      <h1 style={{ color: "blue", fontSize: "45px" }} className="btn">
-        Tasks: {counTask()}
+      <h1 style={{ color: "red", fontSize: "45px" }} className="btn">
+        Tasks: {count}
       </h1>
-      <button disabled={isDisabled}>Add Task</button>
+      <input type="text" />
+      <button value="Add Task Button" onClick={handleClick}>
+        Add Task
+      </button>
     </>
   );
 };
