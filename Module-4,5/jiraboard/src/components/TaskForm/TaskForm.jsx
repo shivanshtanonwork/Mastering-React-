@@ -26,6 +26,11 @@ const TaskForm = ({ setTasks }) => {
       return [...prev, taskData];
     });
     // console.log(taskData);
+    setTaskData({
+      task: "",
+      status: "Ready for Development",
+      tags: [],
+    });
   };
 
   const selectedTag = (tag) => {

@@ -5,9 +5,8 @@
 // var a = 10;
 // console.log(a);
 
-
 // Let Hoisting.
-// TDZ - Temporal Dead Zone 
+// TDZ - Temporal Dead Zone
 // try{
 //     console.log(b); // ReferenceError: a is not defined value in TDZ.
 //  } catch(e){
@@ -16,27 +15,19 @@
 // let b = 10;
 // console.log(b); //10
 
-
 // Functional Hoisting.
-// greet(); 
+// greet();
 // function greet(){
 //     console.log("Hello Lovely People's");
 // }
 
-
 // Function Expression Hoisting.
-// try{
-//     heyFun();
-// }catch(e){
-//     console.log("Error: ", e);
+// try {
+//   heyFun();
+// } catch (e) {
+//   console.log("Error: ", e);
 // }
 
-
-// var heyFun = function(){
-//     console.log("Hey Function");
-// }
-
-
-
-
-
+// var heyFun = function () {
+//   console.log("Hey Function");
+// };
