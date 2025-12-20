@@ -17,6 +17,12 @@ const MyStateComponent = () => {
   function decrement() {
     setCount(count - 1);
   }
+  function addNames(e) {
+    e.preventDefault();
+    setNames([...names, { id: Date.now(), name }]);
+    setName("");
+  }
+  console.log(names);
   return (
     <div>
       <h1>Hello, {flag ? name : ""}</h1>
@@ -28,8 +34,22 @@ const MyStateComponent = () => {
       </div>
       <button onClick={decrement}>Decrement</button>
       <hr />
-      <form>
-        <input type="text" placeholder="Enter name" value={name} />
+      <form onSubmit={addNames}>
+        <input
+          type="text"
+          placeholder="Enter name"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+        <button>Submit</button>
+        <hr />
+        <ul>
+          {names.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
       </form>
     </div>
   );
